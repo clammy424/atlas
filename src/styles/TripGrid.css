@@ -1,0 +1,7 @@
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Three equal columns */
+    grid-template-rows: auto;               /* Rows match content height */
+    gap: 20px; 
+    margin-block: 15px;
+}
