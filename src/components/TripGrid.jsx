@@ -5,14 +5,12 @@ import TripCard from "./TripCard.jsx"
 function TripGrid({ trips }) {
     return (
         <div className="trip-grid">
-
             {trips.map(trip => (
                 <TripCard
                     key={trip.id}
                     trip={trip}
                 />
             ))}
-
         </div>
     );
 }

@@ -1,3 +1,58 @@
+.tagbar-wrapper {
+    position: sticky;
+    top: 70px;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    background: white;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.tagbar-container {
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.tagbar-container::-webkit-scrollbar {
+    display: none;
+}
+
 .tags {
-    padding: 5px;
+    display: flex;
+    gap: 30px;
+    width: max-content;
+}
+
+.name {
+    flex-shrink: 0;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.scroll-button {
+    width: 34px;
+    height: 34px;
+
+    margin: 0 8px;
+
+    border: none;
+    border-radius: 5px;
+    color: var(--main-color);
+    background: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+
+    flex-shrink: 0;
+
+    transition: background-color 0.2s;
+}
+
+.scroll-button:hover {
+    background: var(--hover-color);
 }

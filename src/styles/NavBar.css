@@ -17,10 +17,10 @@ nav {
 .icon {
     padding: 8px;
     font-size: 45px;
-    color: #981349;
+    color: var(--main-color);
     border-radius: 10px;
 }
 
 .icon:hover {
-    background-color: #d1e7f980;
+    background-color: var(--hover-color);;
 }

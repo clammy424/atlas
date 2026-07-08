@@ -1,5 +1,6 @@
 .search-bar {
-    padding-block: 15px;
+    padding-top: 15px;
+    padding-bottom: 8px;
     position: sticky;
     top: 0; /* Sticks to the very top of the screen */
     z-index: 100;
