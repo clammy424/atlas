@@ -1,0 +1,11 @@
+.profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profile-container {
+    display: flex;
+    width: 100%;
+}

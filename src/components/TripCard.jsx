@@ -1,4 +1,4 @@
-import "../styles/TripCard.css"
+import "../styles/components/TripCard.css"
 
 function TripCard({ trip }) {
   return (

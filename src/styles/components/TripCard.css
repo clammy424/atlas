@@ -1,0 +1,28 @@
+.trip-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    box-shadow: 0 10px 30px rgba(8, 6, 13, 0.04);
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, var(--pink), var(--pale-green));
+    border-radius: 16px;
+}
+
+.trip-card h2 {
+    font-size: 1rem;
+    color: var(--text-h);
+}
+
+.trip-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text);
+}

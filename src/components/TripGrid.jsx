@@ -1,4 +1,4 @@
-import "../styles/TripGrid.css"
+import "../styles/components/TripGrid.css"
 import TripCard from "./TripCard.jsx"
 
 

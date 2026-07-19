@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 import NavBar from "../components/NavBar.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import  "../styles/MainLayout.css"
@@ -13,8 +15,7 @@ function MainLayout({ children }) {
       <main className="content">
 
         <SearchBar />
-
-        {children}
+        <Outlet />
 
       </main>
 

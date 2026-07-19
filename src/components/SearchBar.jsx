@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/SearchBar.css"
+import "../styles/components/SearchBar.css"
 
 import { IoSearchCircleOutline } from "react-icons/io5";
 

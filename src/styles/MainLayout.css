@@ -4,8 +4,9 @@
 }
 
 .navbar {
+    background-color: var(--pink-transparent);
     width: 75px;
-    border-right: 1px solid darkgray;
+    box-shadow: 7px 0px 8px -8px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
 }
 
@@ -15,4 +16,21 @@
     flex: 1;
     margin-inline: 18px;
     min-width: 0;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .navbar {
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .content {
+        margin-inline: 12px;
+        padding-bottom: 1.5rem;
+    }
 }

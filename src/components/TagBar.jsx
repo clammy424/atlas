@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "../styles/TagBar.css";
+import "../styles/components/TagBar.css";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 function TagBar({ boards }) {

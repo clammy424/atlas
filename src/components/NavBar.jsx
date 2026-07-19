@@ -1,4 +1,4 @@
-import "../styles/NavBar.css"
+import "../styles/components/NavBar.css"
 
 import { IoHomeOutline, IoAddCircleOutline, IoEarthOutline } from "react-icons/io5";
 

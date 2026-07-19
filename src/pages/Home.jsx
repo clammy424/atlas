@@ -1,4 +1,4 @@
-import "../styles/Home.css"
+import "../styles/pages/Home.css"
 
 import TagBar from "../components/TagBar.jsx"
 import boards from "../data/boards.jsx"

@@ -1,0 +1,53 @@
+.folder-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    box-shadow: 0 10px 30px rgba(8, 6, 13, 0.04);
+}
+
+.folder-preview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+    width: 100%;
+    aspect-ratio: 1.7 / 1;
+}
+
+.folder-preview__tile {
+    border-radius: 10px;
+}
+
+.folder-card__top {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.folder-card h3 {
+    font-size: 1rem;
+    color: var(--text-h);
+}
+
+.folder-count {
+    font-size: 0.74rem;
+    color: var(--text);
+    margin-top: 0.2rem;
+}
+
+.folder-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.folder-chip {
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: var(--pale-green);
+    color: var(--text-h);
+    font-size: 0.8rem;
+}
