@@ -1,0 +1,56 @@
+.login-form {
+    display: grid;
+    gap: clamp(0.5rem, 1.8vh, 1rem);
+}
+
+.login-form__field {
+    display: grid;
+    gap: clamp(0.25rem, 0.8vh, 0.4rem);
+    color: var(--text-h);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.login-form__field input {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 0.45rem;
+    background: var(--bg);
+    color: var(--text-h);
+    padding: clamp(0.45rem, 1.3vh, 0.7rem) 0.8rem;
+    font-weight: 400;
+}
+
+.login-form__field input:focus {
+    border-color: var(--main-color);
+    outline: 2px solid color-mix(in srgb, var(--main-color) 20%, transparent);
+    outline-offset: 1px;
+}
+
+.login-form__forgot-link {
+    justify-self: end;
+    color: var(--main-color);
+    font-size: 0.8rem;
+    margin-top: clamp(-0.45rem, -0.7vh, -0.25rem);
+}
+
+.login-form__submit {
+    border: 1px solid var(--main-color);
+    border-radius: 0.45rem;
+    background: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    padding: clamp(0.5rem, 1.3vh, 0.72rem) 1rem;
+}
+
+.login-form__signup {
+    color: var(--text);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.login-form__signup a {
+    color: var(--main-color);
+    font-weight: 700;
+}

@@ -1,0 +1,20 @@
+.google-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 0.65rem;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    background: var(--bg);
+    color: var(--text-h);
+    cursor: pointer;
+    font-weight: 600;
+    min-height: 2.1rem;
+    padding: 0.4rem 1rem;
+}
+
+.google-button__mark {
+    color: #4285f4;
+    font-weight: 800;
+}

@@ -14,8 +14,8 @@ const navItems = [
         icon: IoEarthOutline
     },
     {
-        label: "Create Trip",
-        href: "/trip-creation-tool",
+        label: "Create Post",
+        href: "/createPost",
         icon: IoAddCircleOutline
     }
 ];

@@ -90,7 +90,6 @@
     color: var(--text-h);
 }
 
-
 @media (max-width: 768px) {
     .dashboard-header {
         flex-direction: column;

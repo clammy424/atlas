@@ -1,0 +1,159 @@
+.signup-form {
+    display: grid;
+    gap: clamp(0.32rem, 0.85vh, 0.55rem);
+}
+
+.signup-form__picture-field {
+    align-items: center;
+    display: flex;
+}
+
+.signup-form__avatar-upload {
+    align-items: center;
+    color: var(--text-h);
+    cursor: pointer;
+    display: flex;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.signup-form__avatar {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    height: clamp(2.5rem, 6vh, 3rem);
+    justify-content: center;
+    width: clamp(2.5rem, 6vh, 3rem);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--main-color);
+    overflow: hidden;
+}
+
+.signup-form__avatar svg {
+    fill: none;
+    height: 55%;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+    width: 55%;
+}
+
+.signup-form__avatar img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.signup-form__picture-copy,
+.signup-form__field {
+    display: grid;
+    gap: clamp(0.16rem, 0.4vh, 0.28rem);
+    color: var(--text-h);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.signup-form__picture-copy span:last-child {
+    color: var(--text);
+    font-size: 0.72rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.signup-form__avatar-upload input {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.signup-form__field input {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    background: var(--bg);
+    color: var(--text-h);
+    min-height: 2rem;
+    padding: 0.35rem 0.7rem;
+    font-weight: 400;
+}
+
+.signup-form__field input:focus {
+    border-color: var(--main-color);
+    outline: 2px solid color-mix(in srgb, var(--main-color) 20%, transparent);
+    outline-offset: 1px;
+}
+
+.signup-form__avatar-upload:focus-within .signup-form__avatar {
+    border-color: var(--main-color);
+    outline: 2px solid color-mix(in srgb, var(--main-color) 20%, transparent);
+    outline-offset: 2px;
+}
+
+.signup-form__helper,
+.signup-form__error {
+    min-height: 1.05rem;
+    color: var(--text);
+    font-size: 0.75rem;
+    font-style: italic;
+    line-height: 1.2;
+    margin-top: -0.25rem;
+}
+
+.signup-form__error {
+    color: #b42318;
+}
+
+.signup-form__submit {
+    border: 1px solid var(--main-color);
+    border-radius: 0.45rem;
+    background: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 0.1rem;
+    min-height: 2.1rem;
+    padding: 0.4rem 1rem;
+}
+
+.signup-form__login {
+    color: var(--text);
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+.signup-form__login a {
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+@media (max-height: 700px), (max-width: 420px) {
+    .signup-form {
+        gap: 0.35rem;
+    }
+
+    .signup-form__avatar-upload {
+        gap: 0.6rem;
+    }
+
+    .signup-form__avatar {
+        height: 2.35rem;
+        width: 2.35rem;
+    }
+
+    .signup-form__picture-copy,
+    .signup-form__field {
+        font-size: 0.85rem;
+    }
+
+    .signup-form__helper,
+    .signup-form__error {
+        min-height: 0.9rem;
+    }
+}
