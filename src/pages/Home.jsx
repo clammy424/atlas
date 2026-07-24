@@ -13,8 +13,6 @@ function Home() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    const { user } = useAuth();
-
     useEffect(() => {
         try {
             setTrips(tripsData);
@@ -28,7 +26,6 @@ function Home() {
     return (
         <>
             <div className="home">
-                <div> {user ? user.username : "Not logged in" }</div>
                 <TagBar boards={boards}/>
                 {loading && <p>Loading posts...</p>}
                 {error && <p>{error}</p>}

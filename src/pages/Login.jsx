@@ -1,10 +1,9 @@
-import { useAuth } from "../hooks/useAuth";
-
 import LoginForm from "../components/auth/LoginForm";
 import GoogleButton from "../components/auth/GoogleButton";
 import "../styles/pages/Login.css";
 
 function Login() {
+    
     return (
         <main className="login-page">
             <section className="login-page__panel" aria-labelledby="login-title">

@@ -1,8 +1,28 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+
 import "../../styles/components/LoginForm.css";
 
 function LoginForm({ children }) {
+        const [username, setUsername] = useState("");
+        const [password, setPassword] = useState("");
+
+        const { login } = useAuth();
+        const navigate = useNavigate();
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            try {
+                await login(username, password);
+                console.log("Logged in user:", username);
+                navigate("/");
+            } catch (error) {
+                console.log("Login failed:", error.message);
+            }
+        }
     return (
-        <form className="login-form">
+        <form className="login-form" onSubmit={handleLogin}>
             {/* <label className="login-form__field" htmlFor="email">
                 <span>Email</span>
                 <input id="email" name="email" type="email" autoComplete="email" />
@@ -10,19 +30,21 @@ function LoginForm({ children }) {
 
             <label className="login-form__field" htmlFor="username">
                 <span>Username</span>
-                <input id="username" name="username" type="text" autoComplete="username" />
+                <input id="username" name="username" type="text" autoComplete="username" value={username}
+                    onChange={(e) => setUsername(e.target.value)}/>
             </label>
 
             <label className="login-form__field" htmlFor="password">
                 <span>Password</span>
-                <input id="password" name="password" type="password" autoComplete="current-password" />
+                <input id="password" name="password" type="password" autoComplete="current-password" value={password}
+                    onChange={(e) => setPassword(e.target.value)}/>
             </label>
 
             <a className="login-form__forgot-link" href="/forgot-password">
                 Forgot your password?
             </a>
 
-            <button className="login-form__submit" type="button">
+            <button className="login-form__submit" type="submit">
                 Log In
             </button>
 

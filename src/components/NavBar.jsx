@@ -1,4 +1,5 @@
-import "../styles/components/NavBar.css"
+import { useAuth } from "../hooks/useAuth";
+import "../styles/components/NavBar.css";
 
 import { IoHomeOutline, IoAddCircleOutline, IoEarthOutline } from "react-icons/io5";
 
@@ -21,13 +22,17 @@ const navItems = [
 ];
 
 function NavBar(){
+    const { user } = useAuth();
+
     return (
         <nav>
             {navItems.map((item) => (
-            <a key={item.label} href={item.href} >
-                <item.icon className="icon"/>
-            </a>
-        ))}</nav>
+                <a key={item.label} href={item.href}>
+                    <item.icon className="icon"/>
+                </a>
+            ))}
+            <span>{user ? user.username : "Guest"}</span>
+        </nav>
     );
 }
 
