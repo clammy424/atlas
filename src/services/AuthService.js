@@ -1,6 +1,5 @@
 import users from "../data/users.js";
 
-
 export async function login(username, inputPassword) {
     // TODO:
     // 1. Find the user
@@ -24,6 +23,21 @@ export function logout() {
 }
 
 export function signup(username, email, password) {
+    if (users.some(u => u.username === username)) {
+        throw new Error("Username already exists");
+    }
+    
+    const newUser = {
+        id: users.length + 1,
+        username,
+        email,
+        password, // In a real application hash the password before storing it
+        createdAt: new Date().toISOString(),
+        profilePictureUrl: null // Default profile picture URL
+    };
+    users.push(newUser);
+    const { password: _, ...safeUser } = newUser;
+    return safeUser;
 }
 
 export function getCurrentUser() {

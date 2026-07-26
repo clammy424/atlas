@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+
+import { useAuth } from "../../hooks/useAuth";
 import "../../styles/components/SignupForm.css";
 
 function DefaultProfilePicture() {
@@ -11,8 +14,32 @@ function DefaultProfilePicture() {
 }
 
 function SignupForm({ children }) {
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [verifyPassword, setVerifyPassword] = useState("");
     const [profilePicture, setProfilePicture] = useState(null);
     const [profilePictureUrl, setProfilePictureUrl] = useState("");
+    const [error, setError] = useState("");
+
+    const { signup } = useAuth();
+    const navigate = useNavigate();
+
+    async function handleSignup(e) {
+        e.preventDefault();
+        setError(""); // Clear previous error messages
+        try {
+            if (password !== verifyPassword) {
+                setError("Passwords do not match");
+                return;
+            }
+            await signup(username, email, password);
+            console.log("Signed up user:", username);
+            navigate("/");
+        } catch (error) {
+            setError(error.message);
+        }
+    }
 
     useEffect(() => {
         if (!profilePicture) {
@@ -31,7 +58,7 @@ function SignupForm({ children }) {
     }
 
     return (
-        <form className="signup-form">
+        <form className="signup-form" onSubmit={handleSignup}>
             {/* <div className="signup-form__picture-field">
                 <label className="signup-form__avatar-upload" htmlFor="profile-picture">
                     <span
@@ -60,12 +87,12 @@ function SignupForm({ children }) {
 
             <label className="signup-form__field" htmlFor="signup-email">
                 <span>Email</span>
-                <input id="signup-email" name="email" type="email" autoComplete="email" />
+                <input id="signup-email" name="email" type="email" autoComplete="email" onChange={(e) => setEmail(e.target.value)}/>
             </label>
 
             <label className="signup-form__field" htmlFor="signup-username">
                 <span>Username</span>
-                <input id="signup-username" name="username" type="text" autoComplete="username" />
+                <input id="signup-username" name="username" type="text" autoComplete="username" onChange={(e) => setUsername(e.target.value)}/>
             </label>
             <p className="signup-form__helper" aria-live="polite">
                 Username availability will appear here.
@@ -73,23 +100,27 @@ function SignupForm({ children }) {
 
             <label className="signup-form__field" htmlFor="signup-password">
                 <span>Password</span>
-                <input id="signup-password" name="password" type="password" autoComplete="new-password" />
+                <input id="signup-password" name="password" type="password" autoComplete="new-password" onChange={(e) => setPassword(e.target.value)}/>
             </label>
 
             <label className="signup-form__field" htmlFor="verify-password">
                 <span>Verify password</span>
-                <input id="verify-password" name="verify-password" type="password" autoComplete="new-password" />
+                <input id="verify-password" name="verify-password" type="password" autoComplete="new-password" onChange={(e) => setVerifyPassword(e.target.value)}/>
             </label>
             <p className="signup-form__error" aria-live="polite" />
 
-            <button className="signup-form__submit" type="button">
+            <button className="signup-form__submit" type="submit">
                 Create Account
             </button>
+
+            <p className="signup-form__error">
+                {error}
+            </p>
 
             {children}
 
             <p className="signup-form__login">
-                Already have an account? <a href="/login">Log In</a>
+                Already have an account? <Link to="/login">Log In</Link>
             </p>
         </form>
     );

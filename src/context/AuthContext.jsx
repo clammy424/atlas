@@ -12,8 +12,23 @@ export function AuthProvider({ children }) {
         return safeUser;
     }
 
+    async function signup(username, email, password) {
+        const safeUser = await AuthService.signup(username, email, password);
+        setUser(safeUser);
+        return safeUser;
+    }
+
+    function logout() {
+        AuthService.logout();
+        setUser(null);
+    }
+
+    function getCurrentUser() {
+        return user;
+    }
+
     return (
-    <AuthContext.Provider value={{ user, login }}>
+    <AuthContext.Provider value={{ user, login, logout, signup, getCurrentUser }}>
         {children}
     </AuthContext.Provider>
 );
