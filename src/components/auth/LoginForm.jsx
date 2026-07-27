@@ -1,22 +1,23 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import { useModal } from "../../hooks/useModal";
 
 import "../../styles/components/LoginForm.css";
+
 
 function LoginForm({ children }) {
         const [username, setUsername] = useState("");
         const [password, setPassword] = useState("");
 
         const { login } = useAuth();
-        const navigate = useNavigate();
+        const { closeLogin } = useModal();
 
         async function handleLogin(e) {
             e.preventDefault();
             try {
                 await login(username, password);
                 console.log("Logged in user:", username);
-                navigate("/");
+                closeLogin();
             } catch (error) {
                 console.log("Login failed:", error.message);
             }

@@ -11,16 +11,28 @@ nav {
     gap: 28px;
 
     padding-top: 24px;
-    
+}
+
+nav a,
+nav button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: var(--main-color);
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+    font-family: inherit;
 }
 
 .icon {
-    padding: 8px;
-    font-size: 45px;
-    color: var(--main-color);
-    border-radius: 10px;
+    font-size: 30px;
 }
 
 .icon:hover {
-    background-color: var(--hover-color);;
+    background-color: var(--hover-color);
 }

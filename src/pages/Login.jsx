@@ -1,12 +1,11 @@
 import LoginForm from "../components/auth/LoginForm";
-import GoogleButton from "../components/auth/GoogleButton";
+// import GoogleButton from "../components/auth/GoogleButton";
 import "../styles/pages/Login.css";
 
 function Login() {
     
     return (
-        <main className="login-page">
-            <section className="login-page__panel" aria-labelledby="login-title">
+        <section className="login-page__panel" aria-labelledby="login-title">
                 <div className="login-page__logo" aria-label="Atlas logo placeholder">
                     Atlas
                 </div>
@@ -16,14 +15,13 @@ function Login() {
                 </header>
 
                 <LoginForm>
-                    <div className="login-page__divider" aria-hidden="true">
+                    {/* <div className="login-page__divider" aria-hidden="true">
                         <span>OR</span>
                     </div>
 
-                    <GoogleButton />
+                    <GoogleButton /> */}
                 </LoginForm>
-            </section>
-        </main>
+        </section>
     );
 }
 

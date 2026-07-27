@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { useModal } from "../hooks/useModal";
 import "../styles/components/NavBar.css";
 
-import { IoHomeOutline, IoAddCircleOutline, IoEarthOutline } from "react-icons/io5";
+import { IoHomeOutline, IoAddCircleOutline, IoEarthOutline, IoPersonCircleOutline } from "react-icons/io5";
 
 const navItems = [
     {
@@ -23,15 +25,31 @@ const navItems = [
 
 function NavBar(){
     const { user } = useAuth();
+    const { isLoginOpen, openLogin } = useModal();
+
+    function handleProfileClick() {
+        console.log("Profile button clicked");
+        console.log("User:", user);
+        console.log("isLoginOpen:", isLoginOpen);
+        if (user) {
+            // later
+            // openProfileMenu();
+        } else {
+            console.log("Opening login modal");
+            openLogin();
+        }
+    }
 
     return (
         <nav>
             {navItems.map((item) => (
-                <a key={item.label} href={item.href}>
-                    <item.icon className="icon"/>
-                </a>
+                <Link key={item.label} to={item.href} className="icon">
+                    <item.icon/>
+                </Link>
             ))}
-            <span>{user ? user.username : "Guest"}</span>
+            <button className="icon" type="button" onClick={handleProfileClick}>
+                {user ? user.username : <IoPersonCircleOutline />}
+            </button>
         </nav>
     );
 }

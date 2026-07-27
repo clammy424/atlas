@@ -7,18 +7,22 @@ import MyTrips from "./pages/MyTrips";
 import UserHome from "./pages/UserHome";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import LoginModal from "./components/auth/LoginModal";
 
 function App() {
     return (
-        <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route element={<MainLayout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/trip/:id" element={<MyTrips />} />
-                <Route path="/profile" element={<UserHome />} />
-            </Route>
-        </Routes>
+        <>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route element={<MainLayout />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/trip/:id" element={<MyTrips />} />
+                    <Route path="/profile" element={<UserHome />} />
+                </Route>
+            </Routes>
+            <LoginModal />
+        </>
     );
 }
 
