@@ -1,6 +1,6 @@
 import Modal from "../Modal";
 // import LoginForm from "./LoginForm";
-import Login from "../../pages/Login";
+import Login from "../../pages/LoginPage";
 import { useModal } from "../../hooks/useModal";
 
 function LoginModal() {

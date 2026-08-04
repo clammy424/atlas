@@ -1,0 +1,160 @@
+.spot-detail-page {
+    width: 100%;
+    min-height: calc(100vh - 96px);
+    padding: 20px 10px;
+    color: var(--text-h);
+
+}
+
+.spot-detail-container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    max-height: 100px;
+}
+
+.spot-detail-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 10px 16px;
+    background: var(--bg);
+    color: var(--text-h);
+    cursor: pointer;
+}
+
+.spot-detail-back-button:hover {
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+
+.spot-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+}
+
+.spot-detail-media-panel,
+.spot-detail-info-panel {
+    min-width: 0;
+    max-height: 80dvh;
+}
+
+.spot-detail-media-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.spot-detail-info-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border: 1px solid var(--border);
+    background: var(--bg);
+}
+
+
+
+.spot-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+}
+
+.spot-action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 46px;
+    min-height: 46px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0 14px;
+    background: var(--bg);
+    color: var(--text-h);
+}
+
+.spot-action-button:first-child {
+    color: var(--main-color);
+}
+
+
+
+.spot-comments {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
+    padding: 24px 30px 30px;
+}
+
+.spot-comments h2 {
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+}
+
+.spot-comments-list {
+    display: flex;
+    flex: 1;
+    min-height: 180px;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.spot-comment {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    color: var(--text);
+}
+
+.spot-comment:last-child {
+    border-bottom: 0;
+}
+
+.spot-comment-username {
+    margin-bottom: 4px;
+    color: var(--text-h);
+    font-weight: 700;
+}
+
+@media (max-width: 940px) {
+    .spot-detail-page {
+        padding: 24px 16px;
+    }
+
+    .spot-detail-layout {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .spot-carousel-featured {
+        aspect-ratio: 16 / 11;
+    }
+
+    .spot-comments-list {
+        max-height: 340px;
+    }
+}
+
+@media (max-width: 560px) {
+    .spot-detail-display,
+    .spot-comments {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .spot-carousel-thumbnails {
+        grid-template-columns: repeat(3, minmax(72px, 1fr));
+        overflow-x: auto;
+    }
+
+    .spot-actions {
+        flex-wrap: wrap;
+    }
+}
