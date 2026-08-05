@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import "../styles/pages/Home.css"
 
 import { useAuth } from "../hooks/useAuth.js";
-import TagBar from "../components/TagBar.jsx"
-import boards from "../data/boards.jsx"
 import spotsData from "../data/spots.js"
 import SpotPostGrid from "../components/spot/SpotPostGrid.jsx"
 
@@ -26,7 +24,6 @@ function Home() {
     return (
         <>
             <div className="home">
-                <TagBar boards={boards}/>
                 {loading && <p>Loading spots...</p>}
                 {error && <p>{error}</p>}
                 {!loading && !error && <SpotPostGrid spots={spotsData} />}

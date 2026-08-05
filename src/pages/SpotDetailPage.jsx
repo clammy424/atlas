@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
-import CommentsSection from "../components/spot/CommentsSection.jsx";
+import CommentsSection from "../components/posts/CommentsSection.jsx";
 import SpotActions from "../components/spot/SpotActions.jsx";
-import SpotCarousel from "../components/spot/SpotCarousel.jsx";
-import SpotDetailDisplay from "../components/spot/SpotDetailDisplay.jsx";
+// import SpotCarousel from "../components/spot/SpotCarousel.jsx";
+import Carousel from "../components/posts/Carousel.jsx";
+// import SpotDetailDisplay from "../components/spot/SpotDetailDisplay.jsx";
+import SpotPostDetailDisplay from "../components/posts/SpotPost/SpotPostDetailDisplay.jsx";
+import SpotPostButtonBar from "../components/posts/SpotPost/SpotPostButtonBar.jsx";
 import "../styles/pages/SpotDetailPage.css";
 
 const placeholderSpot = {
@@ -71,12 +74,13 @@ function SpotDetailPage() {
 
                 <div className="spot-detail-layout">
                     <div className="spot-detail-media-panel">
-                        <SpotCarousel media={placeholderSpot.media} />
-                        <SpotActions likeCount={placeholderSpot.likeCount} />
+                        <Carousel media={placeholderSpot.media} />
+                        {/* <SpotActions likeCount={placeholderSpot.likeCount} /> */}
+                        <SpotPostButtonBar />
                     </div>
 
                     <div className="spot-detail-info-panel">
-                        <SpotDetailDisplay spot={placeholderSpot} />
+                        <SpotPostDetailDisplay spot={placeholderSpot} />
                         <CommentsSection comments={placeholderSpot.comments} />
                     </div>
                 </div>
