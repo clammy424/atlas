@@ -1,4 +1,5 @@
 import "../../../styles/components/posts/SpotPost/SpotPostDetailDisplay.css";
+import PostTags from "../PostTags.jsx"
 
 function SpotPostDetailDisplay({ spot }) {
 
@@ -12,12 +13,15 @@ function SpotPostDetailDisplay({ spot }) {
             </div>
             <div className="spot-post-detail-content">
                 <h1 id="spot-post-detail-title">{spot.title}</h1>
-            
-                    <p className="spot-post-detail-date">Posted: {spot.postDate}
-                        {spot.visitedDate ? (
-                            <span> | Visited: {spot.visitedDate}</span>
-                        ) : null} </p>
-                    <p className="spot-post-detail-description">{spot.description}</p>
+                <p className="spot-post-detail-location">{spot.location}</p>
+                <p className="spot-post-detail-date">Posted: {spot.postDate}
+                    {spot.visitedDate ? (
+                        <span> | Visited: {spot.visitedDate}</span>
+                    ) : null} 
+                </p>
+                <PostTags tags={spot.tags}/>
+                <p className="spot-post-detail-description">{spot.description}</p>
+                
             </div>
             
         </div>

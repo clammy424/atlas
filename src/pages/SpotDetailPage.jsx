@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { useState } from "react";
 
 import CommentsSection from "../components/posts/CommentsSection.jsx";
 import SpotActions from "../components/spot/SpotActions.jsx";
@@ -14,6 +15,7 @@ const placeholderSpot = {
     title: "Golden Hour Lookout",
     username: "mira_travels",
     userProfileImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=80",
+    location: "Golden Gate Bridge, San Francisco",
     postDate: "June 18, 2026",
     visitedDate: "May 30, 2026",
     description:
@@ -59,7 +61,7 @@ const placeholderSpot = {
 
 function SpotDetailPage() {
     const navigate = useNavigate();
-
+    const [query, setQuery] = useState("");
     return (
         <section className="spot-detail-page" aria-labelledby="spot-detail-title">
             <div className="spot-detail-container">
@@ -82,6 +84,11 @@ function SpotDetailPage() {
                     <div className="spot-detail-info-panel">
                         <SpotPostDetailDisplay spot={placeholderSpot} />
                         <CommentsSection comments={placeholderSpot.comments} />
+                        <input  className="comment-bar"
+                                type="text"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                placeholder="Add a comment..."></input>
                     </div>
                 </div>
             </div>

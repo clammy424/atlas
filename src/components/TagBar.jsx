@@ -115,7 +115,7 @@ function TagBar({ boards }) {
                 <div className="tags">
                     {boards.map((board, index) => (
                         <div
-                            className="name"
+                            className="tag"
                             key={board.name}
                             ref={(el) => (tagRefs.current[index] = el)}
                         >
