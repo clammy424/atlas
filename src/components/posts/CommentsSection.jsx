@@ -1,7 +1,7 @@
 function CommentsSection({ comments }) {
     return (
         <section className="spot-comments" aria-labelledby="spot-comments-title">
-            <h2 id="spot-comments-title">Comments</h2>
+            {/* <h2 id="spot-comments-title">Comments</h2> */}
 
             <div className="spot-comments-list">
                 {comments.map((comment) => (

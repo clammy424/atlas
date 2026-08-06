@@ -1,13 +1,13 @@
 .tagbar-wrapper {
     position: sticky;
-    top: 70px;
+    /* top: 70px; */
 
     display: flex;
     align-items: center;
 
     width: 100%;
     background: white;
-    padding: 15px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -24,14 +24,29 @@
 
 .tags {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     width: max-content;
+
 }
 
-.name {
+.tag {
     flex-shrink: 0;
     cursor: pointer;
     white-space: nowrap;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding-inline: 15px;
+    width: fit-content;
+    height: fit-content;
+    padding-block: 5px;
+    color: var(--text-h);
+
+    font-weight: 500;
+}
+
+.tag:hover {
+    color: var(--main-color);
+    background-color: var(--hover-color);
 }
 
 .scroll-button {

@@ -33,12 +33,20 @@
 }
 
 .spot-post-detail-display h1 {
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     color: var(--main-color);
     font-family: var(--heading);
     font-size: clamp(1rem, 2vw, 2rem);
     line-height: 1;
     font-weight: 700;
+}
+
+.spot-post-detail-location {
+    color: var(--text-h);
+    font-size: 0.8rem;
+    /* font-style: italic; */
+    line-height: 1.2;
+    margin-bottom: 8px;
 }
 
 .spot-post-detail-date {
@@ -49,7 +57,7 @@
 }
 
 .spot-post-detail-description {
-    margin-top: 20px;
+    margin-top: 10px;
     color: var(--text-h);
     line-height: 1.65;
     font-size: 0.9rem;

@@ -1,0 +1,25 @@
+.post-tag-container {
+    display: flex;
+    flex-direction: row;
+    margin-block: 2%;
+    gap: 8px;
+}
+
+.post-tag {
+    width: fit-content;
+    height: fit-content;
+    padding-block: 5px;
+    padding-inline: 10px;
+    color: var(--text-h);
+
+    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+}
+
+.post-tag:hover {
+    color: var(--main-color);
+    background-color: var(--hover-color);
+}

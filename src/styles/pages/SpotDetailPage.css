@@ -1,16 +1,14 @@
 .spot-detail-page {
     width: 100%;
-    min-height: calc(100vh - 96px);
+    /* min-height: calc(100vh - 96px); */
     /* padding: 5px 10px; */
     color: var(--text-h);
-
 }
 
 .spot-detail-container {
+    overflow-y: hidden;
     width: min(1180px, 100%);
-    margin: 0 auto;
-    max-height: 100px;
-
+    margin: auto auto;
 }
 
 .spot-detail-back-button {
@@ -160,4 +158,11 @@
     .spot-actions {
         flex-wrap: wrap;
     }
+}
+
+.comment-bar {
+    width: 95%;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    /* margin: 24px 30px 30px; */
 }
